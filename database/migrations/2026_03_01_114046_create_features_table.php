@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('status')->default('Proposed');
             $table->string('type')->default('Feature');
+            $table->text('description');
+            $table->smallInteger('effort_in_days')->unsigned()->default(0);
+            $table->smallInteger('priority')->unsigned()->default(0);
+            $table->decimal('cost', 10, 2)->default(0.00);
+            $table->date('target_deliver_date')->nullable();
+            $table->dateTime('delivered_at')->nullable();
             $table->timestamps();
         });
     }
