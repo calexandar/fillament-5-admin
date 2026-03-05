@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use function Symfony\Component\Clock\now;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Feature>
  */
@@ -17,7 +19,15 @@ class FeatureFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence(),
+            'status' => $this->faker->randomElement(['Proposed', 'In Progress', 'Completed']),
+            'type' => $this->faker->randomElement(['Feature', 'Improvement', 'Bugfix']),
+            'description' => $this->faker->paragraph(),
+            'effort_in_days' => $this->faker->numberBetween(1, 300),
+            'priority' => $this->faker->numberBetween(1, 10),
+            'cost' => $this->faker->randomFloat(2, 2000, 200000),
+            'target_deliver_date' => $this->faker->optional()->dateTimeBetween(now(), now()->addYear()),
+            'delivered_at' => null,
         ];
     }
 }
