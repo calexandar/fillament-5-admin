@@ -26,7 +26,7 @@ class FeatureFactory extends Factory
             'effort_in_days' => $this->faker->numberBetween(1, 300),
             'priority' => $this->faker->numberBetween(1, 10),
             'cost' => $this->faker->randomFloat(2, 2000, 200000),
-            'target_deliver_date' => $this->faker->optional()->dateTimeBetween(now(), now()->addYear()),
+            'target_deliver_date' => $this->faker->optional()->dateTimeBetween(\Carbon\Carbon::now(), \Carbon\Carbon::now()->addYear(1)),
             'delivered_at' => null,
         ];
     }
