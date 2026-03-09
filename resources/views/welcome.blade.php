@@ -23,5 +23,6 @@
         <x-navbar />
         <x-hero />
         <x-about />
+        <x-metrics />
     </body>
 </html>
