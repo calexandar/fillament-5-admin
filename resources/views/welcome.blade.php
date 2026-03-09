@@ -27,5 +27,6 @@
         <x-services />
         <x-events />
         <x-faq />
+        <x-cta />
     </body>
 </html>
