@@ -22,5 +22,6 @@
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18]">
         <x-navbar />
         <x-hero />
+        <x-about />
     </body>
 </html>
