@@ -24,5 +24,6 @@
         <x-hero />
         <x-about />
         <x-metrics />
+        <x-services />
     </body>
 </html>
