@@ -26,5 +26,6 @@
         <x-metrics />
         <x-services />
         <x-events />
+        <x-faq />
     </body>
 </html>
