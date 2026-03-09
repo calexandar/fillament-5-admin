@@ -25,5 +25,6 @@
         <x-about />
         <x-metrics />
         <x-services />
+        <x-events />
     </body>
 </html>
