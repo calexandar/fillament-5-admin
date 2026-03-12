@@ -12,22 +12,15 @@
                 </span>
 
                 <h2 class="mt-6 text-4xl md:text-5xl font-semibold text-neutral-900 leading-tight">
-                    Design with purpose.  
-                    style with heart.
+                    {{ $about?->title ?? 'Design with purpose.  style with heart.' }}
                 </h2>
 
                 <p class="mt-6 text-neutral-600 leading-relaxed">
-                    We create thoughtfully designed interiors that balance
-                    aesthetics, comfort, and functionality. Our philosophy is
-                    rooted in understanding how people live and transforming
-                    spaces into meaningful environments that elevate everyday
-                    life.
+                    {{ $about?->content ?? 'We create thoughtfully designed interiors that balance aesthetics, comfort, and functionality. Our philosophy is rooted in understanding how people live and transforming spaces into meaningful environments that elevate everyday life.' }}
                 </p>
 
                 <p class="mt-4 text-neutral-600 leading-relaxed">
-                    With a deep attention to detail and craftsmanship, our
-                    team collaborates closely with clients to design timeless
-                    interiors that reflect their vision and lifestyle.
+                    {{ $about?->content_2 ?? 'With a deep attention to detail and craftsmanship, our team collaborates closely with clients to design timeless interiors that reflect their vision and lifestyle.' }}
                 </p>
 
             </div>
@@ -35,17 +28,33 @@
             {{-- Right Images --}}
             <div class="grid grid-cols-2 gap-6">
 
-                <img
-                    src="{{ asset('images/about-1.jpg') }}"
-                    alt="Interior design workspace"
-                    class="rounded-xl object-cover w-full h-[320px]"
-                />
+                @if($about?->image_1)
+                    <img
+                        src="{{ Storage::url($about->image_1) }}"
+                        alt="Interior design workspace"
+                        class="rounded-xl object-cover w-full h-[320px]"
+                    />
+                @else
+                    <img
+                        src="{{ asset('images/about-1.jpg') }}"
+                        alt="Interior design workspace"
+                        class="rounded-xl object-cover w-full h-[320px]"
+                    />
+                @endif
 
-                <img
-                    src="{{ asset('images/about-2.jpg') }}"
-                    alt="Modern kitchen design"
-                    class="rounded-xl object-cover w-full h-[260px] mt-16"
-                />
+                @if($about?->image_2)
+                    <img
+                        src="{{ Storage::url($about->image_2) }}"
+                        alt="Modern kitchen design"
+                        class="rounded-xl object-cover w-full h-[260px] mt-16"
+                    />
+                @else
+                    <img
+                        src="{{ asset('images/about-2.jpg') }}"
+                        alt="Modern kitchen design"
+                        class="rounded-xl object-cover w-full h-[260px] mt-16"
+                    />
+                @endif
 
             </div>
 

@@ -22,7 +22,7 @@
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18]">
         <x-navbar />
         <x-hero :hero="$hero" />
-        <x-about />
+        <x-about :about="$about" />
         <x-metrics />
         <x-services />
         <x-events />
